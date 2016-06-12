@@ -1,0 +1,1 @@
+docker run --name=cdb -p 5984:5984 -it -d eross77/couchdb
