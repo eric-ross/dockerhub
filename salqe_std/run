@@ -1,0 +1,1 @@
+docker run --name sq --rm --dns=15.8.178.58 -it salqe_std
