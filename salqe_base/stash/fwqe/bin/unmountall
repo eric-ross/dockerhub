@@ -1,0 +1,13 @@
+#!/bin/bash
+TEMPLOG=/tmp/usermount$$
+function cleanup() {
+  rm -f ${TEMPLOG}
+}
+
+trap cleanup 0
+
+echo "Unmounting test repos" > ${TEMPLOG}
+umount /mnt/fwqenfs >> ${TEMPLOG} 2>&1
+echo "Complete" >> ${TEMPLOG}
+msg ${TEMPLOG}
+

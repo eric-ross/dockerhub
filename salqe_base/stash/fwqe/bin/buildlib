@@ -1,0 +1,25 @@
+#!/bin/bash
+TEMPLOG=/tmp/usermount$$
+function cleanup() {
+  rm -f ${TEMPLOG}
+}
+
+trap cleanup 0
+# accessing salx direct is a special case in Vancouver.  All other
+# access should be via proxy
+
+unset no_proxy
+
+echo "Installing the SALQE test libraries" > ${TEMPLOG}
+cd $HOME/iws_tests/test_lib 
+make clean > /dev/null 2>&1
+if make 
+then
+echo "Library installation complete" >> ${TEMPLOG}
+else
+echo "ERROR:  Build installation failed.  Be sure to mount the test repository" >> ${TEMPLOG}
+echo "  Check terminal window for more details." >> ${TEMPLOG}
+
+fi
+msg ${TEMPLOG}
+

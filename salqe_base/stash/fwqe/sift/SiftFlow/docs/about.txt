@@ -1,0 +1,10 @@
+SiftFlow version 1.0 Beta
+
+An IDE for FML to be used with Sift.
+Currently only supported for Linux. 
+Windows support is planned.
+
+Feel free to report bugs/wishes and 
+suggestions to the email below.
+
+Contact: tad.eug.harris@hp.com

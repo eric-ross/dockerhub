@@ -1,0 +1,136 @@
+Release C.0.0.1
+  Initial CentOS release.  Based on RHEL_MIN_v1_0_9
+  Python couchdb library
+  Python couchapp library
+  Local couchdb server.  Intended for offline cache of configs and results.
+
+Release C.0.0.2
+  Changed autoproxy from http://autocache.vcd.hp.com to http://autocache.hp.com
+  Replaced /etc/udev with Sirius workstation version.  This enables access
+    to print device from pcs in non-root mode.
+
+Release C.0.0.3 -- skipped
+Release C.0.0.4 -- skipped
+
+Release C.0.0.5  
+ installed 32 bit libs:
+   glibc-devel.i686
+   zlib-devl.i686
+   libgcc.i686
+   qt-devel.i686
+ general OS update (yum update)
+ qt-devel (qt-4.6.2)
+ sip-4.14 (from www.riverbankcomputing.co.uk)
+ PyQt-x11-gpl-4.10.1 (from www.riverbankcomputing.co.uk) (note:  without QtWebKit)
+ couchdb 1.3.0
+ ar9170 wireless driver(used with TP-Link WN821N module).
+ 
+Release C.0.0.6
+  updated to latest version of SpiderMonkey 1.8.5
+  Rebuilt/install couchdb 1.3.0 for new SpiderMonkey
+  Installed pybottle
+  Updated python system eggs.
+  Added automation team pub keys to root authorized_keys file.
+  Bookmarks added to browser.
+  Network chooser
+
+Release C.0.0.7
+  CUPS (includes ipptool).
+
+Release C.0.0.8
+  Pycharm updated to 2.7.3
+  Disabled sudo access to trex
+  Python "coverage" installed.
+  command line pycharm added.
+  Updated /opt/jdk to latest version
+  Updated easy_install from http://python-distribute.org/distribute_setup.py
+  Added http://salx.vcd.hp.com/repo as /etc/yum.repos.d/salx.repo
+  Installed libudev-devel for pcs2
+  Installed pcs2
+  Added yum_update for end-user driven updates.  (sudo -E /fwqe/tools/bin/yum_update)
+  yum update:  multiple Linux distro packages.
+  erica:  tool for uploading couchDB design docs.
+
+Release C.0.0.9
+  Updated VMWare Tools to version 9.2.3
+
+Release C.1.0.0
+  /etc/cron.daily/update_security  -- does automatic daily security updates.
+  /root/workstation.sh, /root/vm.sh  -- script used to convert image to
+             hosted, vm mode respectively.
+  /home/trex/internal -- new link to "internal" HP site only libraries.
+  Added HP copyright to welcome message.
+  Upgraded PyCharm to version 3.0 community edition. No license needed now.
+  Rebuilt pcs from latest hpcub-2.0 branch of flextool repo (Oct 8, 2013).
+      - This includes libusb/connection issue fixes
+      - This also includes new 'hp' feature to be notified of device 
+           connection/disconnection.
+          - telnet <pcs host> 8779   then type 'hp' followed by enter.  
+            Every device connected or disconnected will be listed prefixed 
+            by a + or - character followed by device name.
+
+Release C.1.0.1
+  Installed rabbitmq
+  CouchDB 1.5  (fixes problem with views on the previous release)
+  NodeJS Javascript based web service.
+  npm  Installer for NodeJS apps
+  Fauxton (experimental)  New CouchDB UI.  See link on Firefox toolbar.
+  Java SE 7u51
+  Netbeans 7.4
+
+Release C.1.0.2
+  Fixed permission problem on CouchDB that prevented the adding/changing of admin user.
+  expat-devel  (needed for git build)
+  git 1.8.5.3
+  wireshark 1.10.5
+
+Release C.1.0.3
+  Updated root authorized_keys
+
+Release C.1.0.4
+  Removed .gitconfig in trex.  Nag user to update email and user name.
+  Installed R/O key for git.
+  Updated OS packages.  This includes the heartbleed patch.
+  On first logon, prompt for network config. Keep nagging until choice made.
+  Used Clonezilla to make a native install of this VM
+  Update PyCharm to 3.12 Community Edition
+  Updated all python system libs.
+  Installed mysql client and devel headers.
+  Updated VMWare tools to Windows Workstation 10.0
+  Updated git client to version 1.9.2
+
+Release C.1.0.5
+  Updated udev rules for consistency with Sirius workstations.
+  Added gitk
+
+Release C.1.0.6 (note:  never qualified for production use)
+  getcpesetup.sh:  add symlinks for cpe snapshots of r/o git repo
+  updated udev rules.  Eliminated standard hplib rules and added HP Sirius development rules file.
+  removed cups.  You can now install the latest from the salx repo sudo yum install fwqecups.  It is installed by default.
+  updated all CentOS packages
+  sal/salqe libs are now installed by default and updated from the salx repo.
+  removed couchdb admin password
+
+Release C.1.0.7
+  removed sal/salqe RPM packages.  These interfered with normal make installs.
+  removed resultslogger egg manually.   It was interfering with make installs.
+  added "mock" library to python
+  installed cython
+  updated all python libraries
+  yum update on system
+  Python packages:
+   gevent
+   greenlet
+   gevent-websocket
+   numpy
+   selenium
+  Unset no_proxy when installing libs (buildlib)
+
+Release C.1.0.8
+  Pass through the proxy vars into the sudo environment
+
+Release C.1.0.9
+  Add udev rules for Muscatel.  Also updated all other printer rules.
+  yum update
+  Update PyCharm to 4.0.6
+  Update PyDev on Eclipse

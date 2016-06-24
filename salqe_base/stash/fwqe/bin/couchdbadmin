@@ -1,0 +1,8 @@
+#!/bin/sh
+if [ $# -eq 2 ]
+then
+  echo "Usage:  $0 [start | stop | restart]"
+  exit -1
+fi
+
+sudo /etc/init.d/couchdb $1

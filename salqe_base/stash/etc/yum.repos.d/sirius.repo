@@ -1,0 +1,32 @@
+[salqe]
+name = SALQE Repository
+baseurl=http://rpms.vcd.hp.com/repo/salqe/$basearch
+enabled=1
+gpgcheck=0
+metadata_expire=0
+http_caching=none
+
+[sal]
+name = SAL Repository
+baseurl=http://rpms.vcd.hp.com/repo/sal/$basearch
+enabled=1
+gpgcheck=0
+metadata_expire=0
+http_caching=none
+
+[sol]
+name = SOL Repository
+baseurl=http://rpms.vcd.hp.com/repo/sol/$basearch
+enabled=1
+gpgcheck=0
+metadata_expire=0
+http_caching=none
+
+[sirius_tools]
+name = sirius_tools Repository
+baseurl=http://rpms.vcd.hp.com/repo/sirius_tools/$basearch
+enabled=1
+gpgcheck=0
+metadata_expire=0
+http_caching=none
+

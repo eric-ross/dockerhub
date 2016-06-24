@@ -1,0 +1,8 @@
+#!/fwqe/tools/bin/python
+from couchdb import Server
+
+svr = Server()
+for db in svr:
+    if db != '_replicator':
+        svr[db].compact()
+

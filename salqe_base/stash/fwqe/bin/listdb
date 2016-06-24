@@ -1,0 +1,6 @@
+#!/bin/env python 
+# list all the databases in the local couchdb
+import couchdb
+s = couchdb.Server()
+for db in s:
+	print db

@@ -1,0 +1,82 @@
+"
+Welcome to SiftFlow version 1.0 Beta
+
+Thanks go to Michael Hansen for his work on the code editing widget, and to Erik Kilk for 
+for help integrating SiftFlow with Sift.
+
+Change Log:
+    4/18/12 - Open Non Project .fmls
+    Users can now open SiftFlow from the command line and open .fmls not associated with a .all.
+    When opening sift from the command line use 'sift -e [path/any.fml]'
+    If sift is already open use the new command 'edit [path/any.fml]'
+
+    If SiftFlow is opened normally with a .all project, .fmls external to the project will be opened with a @ tag
+    and the full path to it, rather than just the .fml name so as to eliminate confusion with project files.
+
+    3/16/12 - Saving
+    Users can now save changes in SiftFlow to their repo, provided that Sift has been opened from a repo. 
+    The active repo can be viewed next to the project name on the SiftFlow window title. If it says 'None'
+    then Sift was not opened in, and does not have any knowledge of, a repo. In this case saving is disabled.
+
+Features:
+- Initial release
+    In this release SiftFlow contains basic Flow viewing and searching capabilities listed below
+
+- Treeview Navigation
+    The user can navigate flows and .fmls using a treeview listing widget on the left
+    of the interface. When a flow is selected, it is displayed in the viewer on the right.
+
+- Viewer
+    The viewer has tab functionality. Right-clicking a tab will display a menu over it for various
+    closing options. The Main tab can never be closed.
+
+    Selecting a flow and right-clicking it in the main viewer alows a 'Open in New Tab' option in the viewers 
+    context menu.
+
+    Syntax highlighting, code folding, line numbers. 
+    Note about Break points: they are just visual, there is no implentation under this
+
+    Recently opened flows/.fml menu, called Recent, in the File menu.
+
+- Searching
+    Most modern searching functions are implemented and can be accessed by clicking the Find/Replace 
+    buttons, clicking the menu options at the top of the UI, or using the right click context menu in the viewer. 
+    This will open a Find dialog. If a word is selected in the main viewer, it is placed into the find dialog.
+
+    Most of the functionality is self explanatory, but some of the feature highlights are:
+        - Search forward and backward via the 'find next' and 'find prev' buttons
+        - All Search options are stored so they will persist from session to session, the exception is Reg Exp.
+        - A history of the last 15 searchs are stored and displayed in the find and replace combo box.
+        - Clicking the Reg Exp checkbox will allow searching with regular expressions, for example,
+          typing 'flow.*handler' would match both 'flow_sleep_handler' and 'flow_puppy_handler'
+        - Search for references - clicking the references radio button in the Search Mode box then clicking either find 
+          button will display every line the find text appears in within the output window under the main viewer. 
+          Works for current file and selection searches. If 'find in files button' is clicked, references are displayed 
+          for every .fml file.
+        - Find in files, clicking 'find in files' button to initiate the search, as opposed to 'find next' or 'find prev'
+          will open a new tab for every .fml that contains the find text. Each .fml can then be searched normally.
+
+        Note: Replacing is not yet implemented
+
+    Reference search dialog:
+        When a reference search is performed either from the main window or from the find or replace dialog, a new dialog 
+        will display the results within a table. The cells of the table can be double clicked to open the appropriate
+        flow or .fml in the main viewer. This dialog is also tabbed, with a tab corresponding to a new search. The search 
+        text is displayed as the tabs text.
+
+- Editing
+    Various editing features such as Undo/Redo, ability to comment/uncomment and indent/unindent selected blocks of text,
+    goto feature to jump to any line on the current editor.
+
+Future Releases
+version 1.0 +:
+    Extra polish and any bug fixes found in beta.
+
+version 1.2:
+    Preferences dialog to customize and setup various editor and window options.
+
+If you have feedback or bug reports email tad.eug.harris@hp.com. In particular I am looking for feedback regarding
+the Find in Files functionality. If you like it, or prefer another implementation (flextool's way for example) please
+let me know.
+"
+    

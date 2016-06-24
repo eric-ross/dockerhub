@@ -1,0 +1,17 @@
+#!/bin/bash
+export PATH=/bin:/usr/bin
+if xset q &> /dev/null
+then
+  if [ -x /usr/bin/kdialog ]
+  then
+     kdialog --title "FWQE Solution Testing" --textbox "$1" 700 300
+  elif [ -x /usr/bin/zenity ]
+  then
+     zenity --info --text "`cat $1`" --no-wrap
+  else
+     cat "$1"
+  fi
+else
+  cat "$1"
+fi
+

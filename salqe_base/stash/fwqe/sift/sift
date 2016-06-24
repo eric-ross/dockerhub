@@ -1,0 +1,36 @@
+#!/bin/bash
+# Script to start sift.py. Assumes this script is named "sift" and
+# we want to call "sift.py".
+
+# Set any environment variables we need
+PYTHON=python
+PYTHONPATH=
+
+# Use special rules for RedHat 5 and 6
+RH_MAJOR=0
+if [ -e "/etc/redhat-release" ] ; then
+    RHEL_VERSION=$(grep -o 'release [2-9]\.[0-9]\+' /etc/redhat-release)
+    if [ ! -z "$RHEL_VERSION" ] ; then
+        RH_MAJOR=${RHEL_VERSION:8:1}
+    fi
+fi
+
+if [ "$RH_MAJOR" -eq "5" ] ; then
+    PYTHON=/sirius/tools/bin/python
+    SCRIPT_BASE=/sirius/tools/sift.rhel5/sift.py
+elif [ "$RH_MAJOR" -eq "6" ] ; then
+    PYTHON=/sirius/tools2/bin/python
+    SCRIPT_BASE=/sirius/tools/sift/sift.py
+fi
+PYTHON=/fwqe/tools/bin/python
+SCRIPT_BASE=/fwqe/tools/sift/sift.py
+
+# Try to use sift.py found in the same location as this script
+M=${BASH_SOURCE[0]}.py
+if [ ! -f $M ]; then
+    # Otherwise look directly into /sirius/tools/sift
+    M=$SCRIPT_BASE
+fi
+
+# Call sift.py with all the arguments
+exec $PYTHON $M ${1:+"$@"}

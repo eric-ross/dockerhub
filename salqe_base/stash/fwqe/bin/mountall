@@ -1,0 +1,12 @@
+#!/bin/bash
+TEMPLOG=/tmp/usermount$$
+function cleanup() {
+  rm -f ${TEMPLOG}
+}
+
+trap cleanup 0
+echo "Mounting test repos" > ${TEMPLOG}
+mount /mnt/fwqenfs >> ${TEMPLOG} 2>&1
+df -t nfs >> ${TEMPLOG} 2>&1
+echo "Complete" >> ${TEMPLOG}
+msg ${TEMPLOG}
