@@ -1,1 +1,1 @@
-docker run --name sq --rm --dns=15.8.178.58 -it salqe_std
+docker run --name sq --rm -u trex --dns=15.8.178.58 -v /mnt/hgfs/repos/git/iws_tests:/home/trex/iws_tests -it salqe_std $*
