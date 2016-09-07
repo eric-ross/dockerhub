@@ -1,5 +1,5 @@
 # remove all containers
 for i in `docker ps -a | awk '{print $1}' | grep -v "CONTAINER"`
 do
-  docker rm $i
+  docker rm -f $i
 done
