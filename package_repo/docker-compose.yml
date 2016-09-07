@@ -1,0 +1,11 @@
+pypi:
+  build: pypi
+nginx:
+  image: nginx    
+  links:
+  - pypi
+  volumes:
+  - ./nginx/nginx:/etc/nginx
+  ports:
+  - 80:80
+
