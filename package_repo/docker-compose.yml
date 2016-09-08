@@ -5,7 +5,14 @@ nginx:
   links:
   - pypi
   volumes:
-  - ./nginx/nginx:/etc/nginx
+  - ./pypi/conf/nginx.conf:/etc/nginx/conf.d/default.conf
   ports:
   - 80:80
+nginx_default:
+  image: nginx
+  volumes:
+  - ./nginx/conf/nginx.conf:/etc/nginx.conf
+  - ./nginx/conf/nginx.conf:/usr/share/nginx/www/nginx.conf
+  ports:
+  - 8080:80
 
