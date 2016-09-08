@@ -13,10 +13,10 @@ nginx:
                                                                                   # note that the data volume is configured in the pypi instance
 
   - ./rpms/conf/nginx.server.conf:/etc/nginx/conf.d/rpms.conf                     # rpms server
-  - /data01/rpms:/html/                                                           # rpms server www root
+  - /data01/rpms:/rpms/                                                           # rpms server www root
 
-  - ./fwstaging-int/conf/nginx.server.conf:/etc/nginx/conf.d/fwstaging-int.conf   # rpms server
-  - /data01/fwstaging-int:/html/                                                  # fwstaging-int server www root
+  - ./fwstaging-int/conf/nginx.server.conf:/etc/nginx/conf.d/fwstaging-int.conf   # fwstaging-int server
+  - /data01/fwstaging-int:/fwstaging-int/                                                  # fwstaging-int server www root
   ports:
   - 80:80
 
