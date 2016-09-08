@@ -1,18 +1,22 @@
 pypi:
   build: pypi
+  volumes:
+  - /data01/pypi:/pypi
 nginx:
   image: nginx    
   links:
   - pypi
   volumes:
-  - ./pypi/conf/nginx.server.conf:/etc/nginx/conf.d/default.conf
+  - ./nginx/html:/usr/share/nginx/html/                                           # default web site home page
+
+  - ./pypi/conf/nginx.server.conf:/etc/nginx/conf.d/pypi.conf                     # pypi server proxy
+                                                                                  # note that the data volume is configured in the pypi instance
+
+  - ./rpms/conf/nginx.server.conf:/etc/nginx/conf.d/rpms.conf                     # rpms server
+  - /data01/rpms:/html/                                                           # rpms server www root
+
+  - ./fwstaging-int/conf/nginx.server.conf:/etc/nginx/conf.d/fwstaging-int.conf   # rpms server
+  - /data01/fwstaging-int:/html/                                                  # fwstaging-int server www root
   ports:
   - 80:80
-nginx_default:
-  image: nginx
-  volumes:
-  - ./nginx/conf/nginx.conf:/etc/nginx.conf
-  - ./nginx/html:/usr/share/nginx/html/
-  ports:
-  - 8080:80
 
