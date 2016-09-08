@@ -28,4 +28,4 @@ This contains the following servers:
 - Each service has a document root of /servicename.  Map local trees to the appropriate service.
 - Specific files from the standard structure are mapped under the /etc/nginx tree for the configuration.
 
-[Author](mailto:eric.ross.@hp.com)
+Contact [Eric Ross](mailto:eric.ross.@hp.com) if you need more information.
