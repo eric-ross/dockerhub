@@ -17,3 +17,15 @@ This contains the following servers:
 -  Shutdown:  docker-compose stop
 -  Remove images:  docker-compose rm
 
+## Standard structure
+
+- conf/nginx.conf -- this is the main nginx.conf that will be used for the master server.
+- conf/nginx.server.conf -- these files are placed under /etc/conf.d for each server
+- html/* -- placed under the document root (/usr/share/nginx/html/)
+
+## Volumes
+
+- Each service has a document root of /servicename.  Map local trees to the appropriate service.
+- Specific files from the standard structure are mapped under the /etc/nginx tree for the configuration.
+
+[Author](mailto:eric.ross.@hp.com)
