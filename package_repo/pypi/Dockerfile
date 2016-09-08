@@ -6,7 +6,7 @@ ADD bin/* /usr/local/bin/
 ADD docs/* /etc/pypi/docs/
 ADD Dockerfile /etc/Dockerfile
 RUN bash -c "mkdir /logs /pypi"
-RUN bash -c "cat /root/certs/* >> /etc/ssl/certs/ca-certificates.crt"
+RUN pip install cryptography
 RUN pip install passlib
 RUN pip install pypiserver
 EXPOSE 80
